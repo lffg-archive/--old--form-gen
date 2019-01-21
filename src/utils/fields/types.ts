@@ -1,5 +1,7 @@
+export type FieldType = 'input' | 'checkable' | 'select' | 'textarea' | 'extra'
+
 interface BaseField {
-  type: 'input' | 'checkable' | 'select' | 'textarea' | 'extra'
+  type: FieldType
   id: string
   attributes?: { [key: string]: any }
 }
@@ -51,7 +53,7 @@ export interface TextareaField extends BaseField, BaseInteractiveField {
   placeholder?: string
 }
 
-export interface Extra extends BaseField {
+export interface ExtraField extends BaseField {
   type: 'extra'
   tagName: 'h4' | 'p'
   text: string
@@ -62,4 +64,4 @@ export type Field =
   | CheckableField
   | SelectField
   | TextareaField
-  | Extra
+  | ExtraField
