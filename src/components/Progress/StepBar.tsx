@@ -1,17 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Steps } from '../../utils/steps'
 import StepItem from './StepItem'
 
-const Bar = styled.section`
-  display: flex;
-  align-items: center;
-  border: solid 1px #ddd;
-`
+import './Progress.css'
 
 export default function StepBar() {
   return (
-    <Bar>
+    <div className="progress">
       <StepItem
         num={1}
         step="FIELDS"
@@ -30,6 +24,6 @@ export default function StepBar() {
         name="Conclusão"
         desc="Conclusão e instruções de instalação"
       />
-    </Bar>
+    </div>
   )
 }
