@@ -14,7 +14,6 @@ const Item = styled.div`
 `
 
 export interface IProps {
-  isActive?: boolean
   step: Steps
   num: number
   name: string
@@ -22,18 +21,21 @@ export interface IProps {
 }
 
 export default function StepItem(props: IProps) {
-  const { step, changeStep } = useContext(ProgressContext)
+  const { currentStep, changeCurrentStep } = useContext(ProgressContext)
 
   function handleClick() {
-    if (!canChangeStep(step, props.step)) {
+    if (!canChangeStep(currentStep, props.step)) {
       return alert('Não pode avançar por aí!')
     }
 
-    changeStep(props.step)
+    changeCurrentStep(props.step)
   }
 
   return (
-    <Item className={props.isActive ? 'active' : ''} onClick={handleClick}>
+    <Item
+      className={currentStep === props.step ? 'isActive' : ''}
+      onClick={handleClick}
+    >
       <span className="badge badge-dark">{props.num}</span> {props.name} -{' '}
       {props.desc}
     </Item>

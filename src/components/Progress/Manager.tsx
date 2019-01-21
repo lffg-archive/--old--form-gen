@@ -4,15 +4,15 @@ import StepBar from './StepBar'
 import { Steps } from '../../utils/steps'
 
 export default function ProgressManager() {
-  const [step, setStep] = useState<Steps>('FIELDS')
+  const [currentStep, setCurrentStep] = useState<Steps>('FIELDS')
 
-  function changeStep(step: Steps) {
-    setStep(step)
+  function changeCurrentStep(step: Steps) {
+    setCurrentStep(step)
   }
 
   return (
-    <ProgressContext.Provider value={{ step, changeStep }}>
-      <StepBar currentStep={step} />
+    <ProgressContext.Provider value={{ currentStep, changeCurrentStep }}>
+      <StepBar />
     </ProgressContext.Provider>
   )
 }

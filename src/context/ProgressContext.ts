@@ -2,13 +2,13 @@ import React from 'react'
 import { Steps } from '../utils/steps'
 
 export interface IProgressContext {
-  step: Steps
-  changeStep: (toStep: Steps) => void
+  currentStep: Steps
+  changeCurrentStep: (toStep: Steps) => void
 }
 
 export default React.createContext<IProgressContext>({
-  step: 'FIELDS',
-  changeStep: () => {
+  currentStep: 'FIELDS',
+  changeCurrentStep: () => {
     throw new Error('Not implemented.')
   }
 })

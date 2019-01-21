@@ -9,11 +9,7 @@ const Bar = styled.section`
   border: solid 1px #ddd;
 `
 
-export interface IProps {
-  currentStep: Steps
-}
-
-export default function StepBar(props: IProps) {
+export default function StepBar() {
   return (
     <Bar>
       <StepItem
