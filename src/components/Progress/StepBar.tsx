@@ -1,6 +1,6 @@
 import React from 'react'
-import { Steps } from '../../utils/steps'
 import styled from 'styled-components'
+import { Steps } from '../../utils/steps'
 import StepItem from './StepItem'
 
 const Bar = styled.section`

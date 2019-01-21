@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Generator from './components/Generator'
+import App from './components/App'
 
 import './vendor/bootstrap.min.css'
 
-ReactDOM.render(<Generator />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import ProgressContext from '../../context/ProgressContext'
-import { Steps, canChangeStep } from '../../utils/steps'
 import styled from 'styled-components'
+import ProgressContext from '../../context/ProgressContext'
+import { canChangeStep, Steps } from '../../utils/steps'
 
 const Item = styled.div`
   border: solid 1px #ddd;

@@ -1,4 +1,5 @@
 import React from 'react'
+import notImplemented from '../utils/debug/notImplemented'
 import { Steps } from '../utils/steps'
 
 export interface IProgressContext {
@@ -8,7 +9,5 @@ export interface IProgressContext {
 
 export default React.createContext<IProgressContext>({
   currentStep: 'FIELDS',
-  changeCurrentStep: () => {
-    throw new Error('Not implemented.')
-  }
+  changeCurrentStep: notImplemented
 })
