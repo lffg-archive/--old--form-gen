@@ -1,9 +1,10 @@
 import React from 'react'
 import shortid from 'shortid'
-import { Field } from './types'
+import { Field } from '../../utils/fields/types'
 
 function createFieldElement(field: Field) {
   switch (field.type) {
+    // Generic <input />:
     case 'input':
       return (
         <input
@@ -16,6 +17,7 @@ function createFieldElement(field: Field) {
         />
       )
 
+    // <input type="checkbox" /> or <input type="radio" />
     case 'checkable':
       return field.options.map((option) => {
         const id = `${field.id}-${shortid.generate()}`
@@ -36,6 +38,7 @@ function createFieldElement(field: Field) {
         )
       })
 
+    // <select /> or <select multiple />
     case 'select':
       return (
         <select
@@ -56,6 +59,7 @@ function createFieldElement(field: Field) {
         </select>
       )
 
+    // Generic <textarea />
     case 'textarea':
       return (
         <textarea
@@ -68,6 +72,7 @@ function createFieldElement(field: Field) {
         />
       )
 
+    // Extra fields: <p /> and <h4 />
     case 'extra':
       const Tag = field.tagName
 
