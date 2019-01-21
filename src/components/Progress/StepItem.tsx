@@ -33,7 +33,7 @@ export default function StepItem(props: IProps) {
 
   return (
     <Item
-      className={currentStep === props.step ? 'isActive' : ''}
+      className={currentStep === props.step ? 'active' : ''}
       onClick={handleClick}
     >
       <span className="badge badge-dark">{props.num}</span> {props.name} -{' '}
