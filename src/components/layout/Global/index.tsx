@@ -3,8 +3,8 @@ import Header from './Header'
 import Body from './Body'
 import Footer from './Footer'
 
-interface IProps {
-  children: JSX.Element | JSX.Element[]
+export interface IProps {
+  children?: JSX.Element | JSX.Element[]
 }
 
 export default function Global(props: IProps) {

@@ -1,7 +1,7 @@
 import React from 'react'
 
-interface IProps {
-  children: JSX.Element | JSX.Element[]
+export interface IProps {
+  children?: JSX.Element | JSX.Element[]
 }
 
 export default function Body(props: IProps) {
