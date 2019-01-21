@@ -14,7 +14,7 @@ const Item = styled.div`
 `
 
 export interface IProps {
-  isActive: boolean
+  isActive?: boolean
   step: Steps
   num: number
   name: string

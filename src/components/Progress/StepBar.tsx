@@ -16,28 +16,24 @@ export interface IProps {
 export default function StepBar(props: IProps) {
   return (
     <Bar>
-      {[
-        {
-          step: 'FIELDS' as Steps,
-          name: 'Campos',
-          desc: 'Construa o seu formulário'
-        },
-        {
-          step: 'TEMPLATE' as Steps,
-          name: 'Template',
-          desc:
-            'Construa o template a ser usado durante a submissão do seu formulário'
-        },
-        {
-          step: 'DONE' as Steps,
-          name: 'Conclusão',
-          desc: 'Conclusão e instruções de instalação'
-        }
-      ]
-        .map((step) => ({ ...step, isActive: step.step === props.currentStep }))
-        .map((props, index) => (
-          <StepItem {...props} num={index + 1} />
-        ))}
+      <StepItem
+        num={1}
+        step="FIELDS"
+        name="Campos"
+        desc="Construa o seu formulário"
+      />
+      <StepItem
+        num={2}
+        step="TEMPLATE"
+        name="Template"
+        desc="Construa o template a ser usado durante a submissão do seu formulário"
+      />
+      <StepItem
+        num={3}
+        step="DONE"
+        name="Conclusão"
+        desc="Conclusão e instruções de instalação"
+      />
     </Bar>
   )
 }
