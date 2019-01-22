@@ -21,7 +21,7 @@ export default function Interface() {
         <h1>
           Etapa atual: <samp>{currentStep}</samp>
         </h1>
-        {(['GENERATOR', 'TEMPLATE', 'INSTALL'] as Steps[]).map((step) => (
+        {(['GENERATOR', 'TEMPLATE', 'DONE'] as Steps[]).map((step) => (
           <button key={step} onClick={changeStep} data-step={step}>
             {step}
           </button>
