@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
-export interface IProps {
-  children?: JSX.Element | JSX.Element[]
+interface IProps {
+  children?: ReactNode
 }
 
 export default function Body(props: IProps) {

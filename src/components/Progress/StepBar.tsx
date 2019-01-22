@@ -1,16 +1,15 @@
 import React from 'react'
+import styles from './progress.module.scss'
 import StepItem from './StepItem'
-
-import './Progress.css'
 
 export default function StepBar() {
   return (
-    <div className="progress">
+    <div className={styles.progress}>
       <StepItem
         num={1}
-        step="FIELDS"
-        name="Campos"
-        desc="Construa o seu formulário"
+        step="GENERATOR"
+        name="Gerador"
+        desc="Construa o seu formulário através do gerador"
       />
       <StepItem
         num={2}

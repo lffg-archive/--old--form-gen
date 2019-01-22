@@ -1,27 +1,16 @@
 import React from 'react'
-import GeneratorManager from '../Generator/GeneratorManager'
+import FieldsManager from '../Fields/FieldsManager'
 import Global from '../layout/Global'
 import ProgressManager from '../Progress/ProgressManager'
-
-const Fields = <h1>Campos</h1>
-const Template = <h1>Template</h1>
-const Done = <h1>Instalação</h1>
+import AppInterface from './Interface'
 
 export default function App() {
   return (
     <Global>
       <ProgressManager>
-        {(step) => (
-          <GeneratorManager>
-            {
-              {
-                FIELDS: Fields,
-                TEMPLATE: Template,
-                DONE: Done
-              }[step]
-            }
-          </GeneratorManager>
-        )}
+        <FieldsManager>
+          <AppInterface />
+        </FieldsManager>
       </ProgressManager>
     </Global>
   )

@@ -8,6 +8,6 @@ export interface IProgressContext {
 }
 
 export default React.createContext<IProgressContext>({
-  currentStep: 'FIELDS',
+  currentStep: 'GENERATOR',
   changeCurrentStep: notImplemented
 })

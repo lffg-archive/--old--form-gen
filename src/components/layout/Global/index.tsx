@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import Body from './Body'
 import Footer from './Footer'
 import Header from './Header'
 
-export interface IProps {
-  children?: JSX.Element | JSX.Element[]
+interface IProps {
+  children?: ReactNode
 }
 
 export default function Global(props: IProps) {

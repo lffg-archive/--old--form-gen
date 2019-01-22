@@ -2,7 +2,7 @@ import React from 'react'
 import notImplemented from '../utils/debug/notImplemented'
 import { Field } from '../utils/fields/types'
 
-export interface IGeneratedFieldsContext {
+export interface IFieldsContext {
   fields: Field[]
   add: (field: Field) => void
   edit: (fieldId: string, updatedField: Field) => void
@@ -10,7 +10,7 @@ export interface IGeneratedFieldsContext {
   move: (fieldId: string, action: 'up' | 'down') => void
 }
 
-export default React.createContext<IGeneratedFieldsContext>({
+export default React.createContext<IFieldsContext>({
   fields: [],
   add: notImplemented,
   edit: notImplemented,

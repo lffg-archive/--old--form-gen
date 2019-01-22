@@ -1,8 +1,8 @@
-export type Steps = 'FIELDS' | 'TEMPLATE' | 'DONE'
+export type Steps = 'GENERATOR' | 'TEMPLATE' | 'DONE'
 
 export function canChangeStep(from: Steps, to: Steps) {
   const values = {
-    FIELDS: 1,
+    GENERATOR: 1,
     TEMPLATE: 2,
     DONE: 3
   }

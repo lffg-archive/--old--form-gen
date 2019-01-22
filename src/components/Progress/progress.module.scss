@@ -2,12 +2,13 @@
   display: flex;
   align-items: center;
   height: 140px;
+  margin-bottom: 1.5rem;
   padding: 1rem;
   border: solid 1px #ddd;
   border-radius: 0.25rem;
 }
 
-.progress-item {
+.item {
   display: flex;
   width: 100%;
   height: 100%;
@@ -17,26 +18,27 @@
   border-radius: 0.25rem;
 }
 
-.progress-item--active {
+.item:last-child {
+  margin-right: 0;
+}
+
+.item.active {
   border-color: var(--primary);
   box-shadow: inset 0 0 0 1px var(--primary);
 }
 
-.progress-item--disabled {
+.item.disabled {
+  background-color: #f6f6f7;
   opacity: 0.8;
   cursor: not-allowed;
 }
 
-.progress-item:last-child {
-  margin-right: 0;
-}
-
-.progress-item__row {
+.row {
   display: flex;
   flex-direction: column;
 }
 
-.progress-item__badge {
+.badge {
   align-self: center;
   min-width: 45px;
   height: 45px;
@@ -48,21 +50,26 @@
   text-align: center;
 }
 
-.progress-item--active .progress-item__badge {
+.item.active .badge {
   background-color: var(--primary);
 }
 
-.progress-item__name {
+.item.disabled .badge {
+  background-color: #bcc4cc;
+  color: #1b3a52;
+}
+
+.name {
   display: block;
   font-size: 1.45rem;
   margin-bottom: 0.25rem;
 }
 
-.progress-item--active .progress-item__name {
+.item.active .name {
   color: var(--primary);
 }
 
-.progress-item__desc {
+.desc {
   font-size: 80%;
   color: var(--gray);
   line-height: 1.25;

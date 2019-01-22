@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import GeneratedFieldsContext from '../../context/GeneratedFieldsContext'
+import React, { ReactNode, useState } from 'react'
+import FieldsContext from '../../context/FieldsContext'
 import { Field } from '../../utils/fields/types'
 
-export interface IProps {
-  children: JSX.Element | JSX.Element[]
+interface IProps {
+  children: ReactNode
 }
 
-export default function GeneratorManager(props: IProps) {
+export default function FieldsManager(props: IProps) {
   const [fields, setFields] = useState<Field[]>([])
 
   function add(field: Field) {
@@ -39,10 +39,8 @@ export default function GeneratorManager(props: IProps) {
   }
 
   return (
-    <GeneratedFieldsContext.Provider
-      value={{ fields, add, edit, remove, move }}
-    >
+    <FieldsContext.Provider value={{ fields, add, edit, remove, move }}>
       {props.children}
-    </GeneratedFieldsContext.Provider>
+    </FieldsContext.Provider>
   )
 }

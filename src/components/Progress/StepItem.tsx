@@ -3,6 +3,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import ProgressContext from '../../context/ProgressContext'
 import { canChangeStep, Steps } from '../../utils/steps'
+import styles from './progress.module.scss'
 
 export interface IProps {
   step: Steps
@@ -16,7 +17,7 @@ export default function StepItem(props: IProps) {
 
   function handleClick() {
     if (!canChangeStep(currentStep, props.step)) {
-      // return alert('Não pode avançar por aí!')
+      return alert('Não pode avançar por aí!')
     }
 
     changeCurrentStep(props.step)
@@ -25,18 +26,18 @@ export default function StepItem(props: IProps) {
   return (
     <div
       className={classNames(
-        'progress-item',
-        currentStep === props.step ? 'progress-item--active' : '',
+        styles.item,
+        currentStep === props.step ? styles.active : '',
         !canChangeStep(currentStep, props.step) && currentStep !== props.step
-          ? 'progress-item--disabled'
+          ? styles.disabled
           : ''
       )}
       onClick={handleClick}
     >
-      <span className="progress-item__badge">{props.num}</span>
-      <div className="progress-item__row">
-        <span className="progress-item__name">{props.name}</span>
-        <span className="progress-item__desc">{props.desc}</span>
+      <span className={styles.badge}>{props.num}</span>
+      <div className={styles.row}>
+        <span className={styles.name}>{props.name}</span>
+        <span className={styles.desc}>{props.desc}</span>
       </div>
     </div>
   )

@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React, { ReactNode, useState } from 'react'
 import ProgressContext from '../../context/ProgressContext'
 import { Steps } from '../../utils/steps'
 import StepBar from './StepBar'
 
 export interface IProps {
-  children: (step: Steps) => JSX.Element
+  children: ReactNode
 }
 
 export default function ProgressManager(props: IProps) {
-  const [currentStep, setCurrentStep] = useState<Steps>('FIELDS')
+  const [currentStep, setCurrentStep] = useState<Steps>('GENERATOR')
 
   function changeCurrentStep(step: Steps) {
     setCurrentStep(step)
@@ -17,7 +17,7 @@ export default function ProgressManager(props: IProps) {
   return (
     <ProgressContext.Provider value={{ currentStep, changeCurrentStep }}>
       <StepBar />
-      {props.children(currentStep)}
+      {props.children}
     </ProgressContext.Provider>
   )
 }
