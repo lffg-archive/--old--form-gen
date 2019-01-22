@@ -1,0 +1,54 @@
+$rules: (
+  m: 'margin',
+  p: 'padding'
+);
+
+$options: (
+  t: (
+    'top'
+  ),
+  r: (
+    'right'
+  ),
+  b: (
+    'bottom'
+  ),
+  l: (
+    'left'
+  ),
+  x: (
+    'right',
+    'left'
+  ),
+  y: (
+    'top',
+    'bottom'
+  )
+);
+
+$sizes: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 1rem,
+  4: 1.25rem,
+  5: 1.5rem,
+  6: 1.75rem,
+  7: 2rem
+);
+
+@each $ruleKey, $ruleName in $rules {
+  @each $sizeKey, $sizeValue in $sizes {
+    .#{$ruleKey}-#{$sizeKey} {
+      #{$ruleName}: $sizeValue;
+    }
+
+    @each $optionKey, $optionRuleList in $options {
+      .#{$ruleKey}#{$optionKey}-#{$sizeKey} {
+        @each $optionRule in $optionRuleList {
+          #{$ruleName}-#{$optionRule}: $sizeValue;
+        }
+      }
+    }
+  }
+}
